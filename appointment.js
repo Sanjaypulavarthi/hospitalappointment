@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
     form.addEventListener('submit', function (event) {
       if (validateForm()) {
+        event.preventDefault(); 
         alert("Appointment successfully booked!");
+        window.location.href = "index.html";
       } else {
         event.preventDefault();
       }
