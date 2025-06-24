@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Appointment</title>
+  <link rel="website icon" type="png" href="./img/Healthylife.jpg" />
+
+  <style>
+    * {
+      box-sizing: content-box;
+    }
+
+    body {
+      background-color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 9px;
+      box-shadow: rgba(252, 65, 130, 0.2) 0 15px 30px -5px;
+      margin-bottom: 10px;
+    }
+
+    .bg {
+      display: grid;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 5px 32px;
+      align-items: center;
+      align-content: center;
+      gap: 10px;
+      
+    }
+
+    .background-clip {
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      top: 2%;
+      z-index: -1;
+      opacity: 1;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      color: darkred;
+    }
+
+    img {
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    form {
+      position: relative;
+      margin-left: 500px;
+      padding: 27px;
+      border-radius: 5px;
+      box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      border: 0;
+      
+    }
+
+    label {
+      display: block;
+      margin-bottom: 9px;
+      color: whitesmoke;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 25px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      
+    }
+
+    .hole {
+      display: flex;
+      justify-content: center;
+      
+    }
+    input:hover {
+ background: var(--input-hovered-color);
+}
+
+    button {
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      color: whitesmoke;
+      font-size: 13px;
+      padding: 1px 13px;
+      border: 2px solid white;
+      border-radius: 4px;
+      cursor: pointer;
+      height: 2.1rem;
+      float: right;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <video id="video1" autoplay loop muted plays-inline class="background-clip">
+      <source src="./img/hospital.mp4" type="video/mp4" />
+    </video>
+    <div class="hole">
+      <form action="index.html" method="post">
+        <div class="header">
+          <h2><b>Book an Appointment</b></h2>
+          <img src="./img/appointment.png" width="32px" height="32px">
+        </div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Please enter your name" required>
+        <label for="text">Age:</label>
+        <input type="age" id="age" name="age" placeholder="Please enter your age" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+        </select>
+        <label for="phone">Contact number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Please enter your contact number" required>
+        <label for="date">Preferred Appointment Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" placeholder="time">
+        <label for="text">Which procedure do you want to make an appointment for?</label>
+        <select id="procedure" name="procedure" required>
+          <option value="" disabled selected>Select procedure</option>
+          <option value="Medical Examination">Medical Examination</option>
+          <option value="Result Analysis">Result Analysis</option>
+          <option value="Check-up">Casual Check-up</option>
+        </select>
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+          <option value="" disabled selected>Select department</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="orthopedics">Orthopedics</option>
+          <option value="neurology">Neurology</option>
+          <option value="urology">Urology</option>
+          <option value="Gastroenterology">Gastroenterology</option>
+        </select>
+        <button onclick="validateForm()"type="submit">Schedule Appointment</button>
+      </form>
+    </div>
+  </div>
+  <script src="appointment.js"></script>
+</body>
+</html>
